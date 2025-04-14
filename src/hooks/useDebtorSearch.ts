@@ -1,5 +1,5 @@
+import { FormEvent, useEffect, useRef, useState } from 'react';
 import { DebtFilterParams } from '../api/types.ts';
-import { FormEvent, useRef, useState } from 'react';
 
 export function useDebtorSearch(onSearchCallback: (params: DebtFilterParams) => Promise<void>) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -7,6 +7,12 @@ export function useDebtorSearch(onSearchCallback: (params: DebtFilterParams) => 
   const [isSearching, setIsSearching] = useState(false);
 
   const searchInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, []);
 
   const handleSearch = async (e: FormEvent) => {
     e.preventDefault();
