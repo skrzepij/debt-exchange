@@ -1,0 +1,26 @@
+@import "../../../styles/variables.less";
+
+.input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+
+  &__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: @fs-small;
+  }
+
+  &__field {
+    height: 45px;
+  }
+
+  &__error {
+    margin:4px 0;
+    font-size: @fs-small;
+    color: @red;
+    line-height: 1;
+  }
+
+}
