@@ -1,0 +1,25 @@
+@import "../../styles/variables.less";
+@import "../../styles/globals.less";
+
+.debtor-search {
+  background-color: @blue-dark;
+  color: @white;
+  padding: 35px 0 55px 0;
+
+  &__content {
+    &:extend(.container);
+  }
+
+  &__heading {
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  &__form {
+    display: flex;
+    align-items: flex-end;
+    width: 575px;
+    max-width: 100%;
+  }
+}
