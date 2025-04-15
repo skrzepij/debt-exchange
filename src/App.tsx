@@ -53,8 +53,6 @@ function App() {
 
       {!isLoading && !error && debtsToDisplay.length > 0 && (
         <div className="debts-list">
-          {/* Tutaj będzie tabela z dłużnikami */}
-          {/*<pre>{JSON.stringify(debtsToDisplay, null, 2)}</pre>*/}
           <DebtTable debts={debtsToDisplay} />
         </div>
       )}
