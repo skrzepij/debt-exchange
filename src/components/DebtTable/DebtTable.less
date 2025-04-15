@@ -1,0 +1,26 @@
+@import "src/styles/variables";
+@import "src/styles/globals";
+
+.debt-table {
+  &:extend(.container);
+  overflow-x: scroll;
+  margin-top: 5px;
+
+  &__table {
+    table-layout: fixed;
+    border-spacing: 0;
+    width: 100%;
+    min-width: 991px;
+  }
+
+  &__row {
+    color: @blue-dark;
+    font-size: @fs-large;
+    font-weight: @fw-bold;
+  }
+
+  &__cell {
+    padding: 15px;
+    border-bottom: 1px solid @gray;
+  }
+}

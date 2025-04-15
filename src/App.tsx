@@ -5,6 +5,8 @@ import { Debt, DebtFilterParams } from './api/types.ts';
 import { getFilteredDebts } from './api/debtService.ts';
 
 import './App.less';
+import { DebtTable } from './components/DebtTable/DebtTable.tsx';
+import { Loader } from './components/common/Loader/Loader.tsx';
 
 function App() {
   const {
@@ -45,14 +47,13 @@ function App() {
     <main className="app">
       <DebtorSearch onSearch={handleSearch} />
 
-      {isLoading && <div className="loader">Ładowanie...</div>}
+      {isLoading && <Loader />}
 
       {error && <div className="error-message">{error}</div>}
 
       {!isLoading && !error && debtsToDisplay.length > 0 && (
         <div className="debts-list">
-          {/* Tutaj będzie tabela z dłużnikami */}
-          <pre>{JSON.stringify(debtsToDisplay, null, 2)}</pre>
+          <DebtTable debts={debtsToDisplay} />
         </div>
       )}
       {!isLoading && !error && debtsToDisplay.length === 0 && (
