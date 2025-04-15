@@ -6,7 +6,7 @@ import { getFilteredDebts } from './api/debtService.ts';
 
 import './App.less';
 import { DebtTable } from './components/DebtTable/DebtTable.tsx';
-import {Loader} from "./components/common/Loader/Loader.tsx";
+import { Loader } from './components/common/Loader/Loader.tsx';
 
 function App() {
   const {
