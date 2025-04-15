@@ -1,4 +1,4 @@
-import {Debt, DebtFilterParams} from './types.ts';
+import { Debt, DebtFilterParams } from './types.ts';
 
 const API_URL = 'https://rekrutacja-webhosting-it.krd.pl/api/Recruitment'; // TODO move to process.env.API_URL
 
@@ -17,7 +17,6 @@ export const getTopDebts = async (): Promise<Debt[]> => {
   }
 };
 
-// Pobieranie filtrowanych wierzytelności
 export const getFilteredDebts = async (params: DebtFilterParams): Promise<Debt[]> => {
   try {
     const response = await fetch(`${API_URL}/GetFilteredDebts`, {
@@ -39,13 +38,10 @@ export const getFilteredDebts = async (params: DebtFilterParams): Promise<Debt[]
     return await response.json();
   } catch (error) {
     console.error('Failed to fetch filtered debts:', error);
-    throw error instanceof Error
-        ? error
-        : new Error('Nie udało się wyszukać wierzytelności');
+    throw error instanceof Error ? error : new Error('Nie udało się wyszukać wierzytelności');
   }
 };
 
-// Pobieranie liczby wszystkich wierzytelności
 export const getDebtsCount = async (): Promise<number> => {
   try {
     const response = await fetch(`${API_URL}/GetDebtsCount`);
