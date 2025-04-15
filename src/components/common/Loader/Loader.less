@@ -1,0 +1,95 @@
+@import "src/styles/variables.less";
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(3px);
+
+  &__spinner {
+    position: relative;
+    width: 80px;
+    height: 80px;
+
+    &--small {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: lighten(@blue-dark, 40%);
+      border-radius: 50%;
+      top: 30px;
+      left: 30px;
+      animation: pulseShadow 2s linear infinite;
+    }
+
+    &--large {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border: 4px solid transparent;
+      border-top-color: @blue-dark;
+      border-radius: 50%;
+      top: 10px;
+      left: 10px;
+      animation: spin 1.5s linear infinite reverse;
+    }
+
+    &--primary {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border: 3px solid transparent;
+      border-left-color: @red;
+      border-radius: 50%;
+      animation: spin 2.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+    }
+
+    &--secondary {
+      position: absolute;
+      width: 45px;
+      height: 45px;
+      border: 2px solid transparent;
+      border-right-color: darken(@gray, 10%);
+      border-radius: 50%;
+      top: 17.5px;
+      left: 17.5px;
+      animation: spin 1.8s ease-in-out infinite;
+    }
+  }
+
+  &__text {
+    margin-top: 24px;
+    color: @blue-dark;
+    font-size: 16px;
+    font-weight: @fw-bold;
+    letter-spacing: 0.5px;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseShadow {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.9;
+  }
+}

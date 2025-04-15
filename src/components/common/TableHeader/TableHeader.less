@@ -1,0 +1,21 @@
+@import "src/styles/variables.less";
+
+.table-header {
+  color: @gray;
+  font-size: @fs-small;
+  text-align: left;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  border-bottom: 1px solid @gray;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;  // Safari
+  &__sort-icon {
+    display: inline-block;
+    padding: 0 5px;
+    transition: transform 0.2s ease-in-out;
+    &--desc {
+      transform: rotate(-180deg);
+    }
+  }
+}

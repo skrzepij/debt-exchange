@@ -4,15 +4,15 @@ export interface ApiResponse<DataType> {
 }
 
 export interface Debt {
-  id: number;
-  name: string;
-  nip: string;
-  date: string;
-  value: number;
-  address: string;
-  documentType: string;
-  price: number;
-  number: string;
+  Id: number;
+  Name: string;
+  NIP: string;
+  Date: string;
+  Value: number;
+  Address: string;
+  DocumentType: string;
+  Price: number;
+  Number: string;
 }
 
 export interface DebtFilterParams {
