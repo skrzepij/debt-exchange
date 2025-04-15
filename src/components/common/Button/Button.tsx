@@ -1,4 +1,5 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react';
+
 import './Button.less';
 
 type ButtonVariant = 'primary';

@@ -1,9 +1,9 @@
 import { Input } from '../common/Input/Input';
 import { Button } from '../common/Button/Button';
 import { DebtFilterParams } from '../../api/types';
+import { useDebtorSearch } from '../../hooks/useDebtorSearch.ts';
 
 import './DebtorSearch.less';
-import { useDebtorSearch } from '../../hooks/useDebtorSearch.ts';
 
 interface DebtorSearchProps {
   onSearch: (params: DebtFilterParams) => Promise<void>;
