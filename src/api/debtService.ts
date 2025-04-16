@@ -1,6 +1,6 @@
 import { Debt, DebtFilterParams } from './types.ts';
 
-const API_URL = 'https://rekrutacja-webhosting-it.krd.pl/api/Recruitment'; // TODO move to process.env.API_URL
+const API_URL = import.meta.env.VITE_API_URL
 
 export const getTopDebts = async (): Promise<Debt[]> => {
   try {

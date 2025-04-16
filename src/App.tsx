@@ -3,10 +3,11 @@ import { DebtorSearch } from './components/DebtorSearch/DebtorSearch.tsx';
 import { useTopDebts } from './hooks/useDebts.ts';
 import { Debt, DebtFilterParams } from './api/types.ts';
 import { getFilteredDebts } from './api/debtService.ts';
-
-import './App.less';
 import { DebtTable } from './components/DebtTable/DebtTable.tsx';
 import { Loader } from './components/common/Loader/Loader.tsx';
+import { NoResults } from './components/common/NoResults/NoResults.tsx';
+
+import './App.less';
 
 function App() {
   const {
@@ -56,9 +57,7 @@ function App() {
           <DebtTable debts={debtsToDisplay} />
         </div>
       )}
-      {!isLoading && !error && debtsToDisplay.length === 0 && (
-        <div className="app__no-results">Brak wyników</div>
-      )}
+      {!isLoading && !error && debtsToDisplay.length === 0 && <NoResults />}
     </main>
   );
 }
