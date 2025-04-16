@@ -1,8 +1,9 @@
 @import 'styles/reset';
 @import 'styles/utils';
+@import 'styles/variables';
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Helvetica, system-ui, Avenir, Arial, sans-serif;
 }
 
 html {
@@ -13,21 +14,6 @@ body {
   margin: 0;
   display: flex;
   min-height: 100vh;
+  background-color: @white;
 }
 
-a {
-  &:hover {
-
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-}
