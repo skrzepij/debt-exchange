@@ -49,8 +49,15 @@ praktyk programistycznych.
    ```bash
    npm run dev
    ```
+   > 💡 Aplikacja będzie dostępna pod adresem `http://localhost:5173/`.
 
-5. **Uruchomienie testów**:
+5. Uruchomienie aplikacji w trybie produkcyjnym:
+   ```bash
+   npm run build && npm run preview
+   ```
+    > 💡 Aplikacja będzie dostępna pod adresem `http://localhost:4173/`.
+
+6. **Uruchomienie testów**:
    ```bash
    npm run test
    ```
