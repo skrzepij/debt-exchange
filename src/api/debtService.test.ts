@@ -1,7 +1,7 @@
 import { getDebtsCount, getFilteredDebts, getTopDebts } from './debtService';
 import { Debt, DebtFilterParams } from './types';
 
-global.fetch = vi.fn();
+globalThis.fetch = vi.fn();
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
