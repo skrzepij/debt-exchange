@@ -1,4 +1,4 @@
-import {act, renderHook, waitFor} from '@testing-library/react';
+import { act, renderHook, waitFor } from '@testing-library/react';
 import { useTopDebts } from './useDebts';
 import * as debtService from '../api/debtService';
 import { Debt } from '../api/types.ts';
