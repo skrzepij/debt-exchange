@@ -61,6 +61,7 @@ praktyk programistycznych.
    ```bash
    npm run test
    ```
+    > 💡 W celu sprawdzenia poziomu pokrycia testów, uruchom: `npm run test:coverage`.
 
 ---
 
