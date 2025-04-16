@@ -3,13 +3,6 @@ import { DebtorSearch } from './components/DebtorSearch/DebtorSearch.tsx';
 import { useTopDebts } from './hooks/useDebts.ts';
 import { Debt, DebtFilterParams } from './api/types.ts';
 import { getFilteredDebts } from './api/debtService.ts';
-<<<<<<< Updated upstream
-=======
-import { DebtTable } from './components/DebtTable/DebtTable.tsx';
-import { Loader } from './components/common/Loader/Loader.tsx';
-import { NoResults } from './components/common/NoResults/NoResults.tsx';
-import { ErrorMessage } from './components/common/ErrorMessage/ErrorMessage.tsx';
->>>>>>> Stashed changes
 
 import './App.less';
 import { DebtTable } from './components/DebtTable/DebtTable.tsx';
