@@ -1,0 +1,80 @@
+@import "src/styles/variables.less";
+
+.error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  margin: 2rem auto;
+  max-width: 36rem;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+
+  &__scene {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    width: 150px;
+    margin-bottom: 1rem;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    background: @white;
+    border-radius: 50%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(@red, 90%);
+    color: @red;
+  }
+
+  &__exclamation {
+    font-size: 60px;
+    font-weight: bold;
+  }
+
+  &__title {
+    margin-bottom: 0.75rem;
+    color: @red;
+    font-size: @fs-large;
+    font-weight: 600;
+  }
+
+  &__subtitle {
+    font-size: @fs-normal;
+    color: darken(@gray, 10%);
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 769px) {
+  .error-state {
+    padding: 3rem 2rem;
+
+    &__scene {
+      height: 180px;
+      width: 180px;
+    }
+
+    &__title {
+      font-size: @fs-xlarge;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

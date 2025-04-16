@@ -6,6 +6,7 @@ import { getFilteredDebts } from './api/debtService.ts';
 import { DebtTable } from './components/DebtTable/DebtTable.tsx';
 import { Loader } from './components/common/Loader/Loader.tsx';
 import { NoResults } from './components/common/NoResults/NoResults.tsx';
+import { ErrorMessage } from './components/common/ErrorMessage/ErrorMessage.tsx';
 
 import './App.less';
 
@@ -50,7 +51,7 @@ function App() {
 
       {isLoading && <Loader />}
 
-      {error && <div className="error-message">{error}</div>}
+      {error && <ErrorMessage message={error} />}
 
       {!isLoading && !error && debtsToDisplay.length > 0 && (
         <div className="debts-list">
