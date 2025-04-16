@@ -1,55 +1,104 @@
-# Debt Exchange
-## React + TypeScript + Vite
+# 💸 Debt Exchange
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Debt Exchange** to aplikacja webowa służąca do zarządzania długami z funkcjonalnościami takimi jak wyszukiwanie,
+sortowanie i przeglądanie szczegółów dłużników. Projekt został zbudowany przy użyciu nowoczesnych technologii i dobrych
+praktyk programistycznych.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Technologie
 
-## Expanding the ESLint configuration
+- **React** + **TypeScript**: Budowa interfejsu użytkownika.
+- **Vite**: Szybkie i wydajne środowisko tworzenia aplikacji.
+- **LESS**: Zarządzanie stylami.
+- **Vitest** + **React Testing Library**: Testy jednostkowe i integracyjne.
+- **ESLint** + **Prettier**: Statyczna analiza kodu i formatowanie.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## ✨ Funkcjonalności
+
+- **Wyszukiwanie**: Szybkie wyszukiwanie dłużników po nazwie i numerze NIP.
+- **Sortowanie**: Sortowanie danych po różnych polach, takich jak wartość długu, data zobowiązania, itp.
+- **Obsługa błędów**: Dedykowany komponent do wyświetlania błędów w przypadku awarii.
+- **Brak wyników**: Komponent sygnalizujący brak wyników wyszukiwania.
+- **Responsywność**: Optymalny wygląd na urządzenia mobilne.
+
+---
+
+## 🔧 Konfiguracja i uruchamianie
+
+1. **Klonowanie repozytorium**:
+   ```bash
+   git clone https://github.com/skrzepij/debt-exchange.git
+   cd debt-exchange
+   ```
+
+2. **Instalacja zależności**:
+   ```bash
+   npm install
+   ```
+
+3. **Konfiguracja zmiennych środowiskowych**:
+   Plik `.env` w katalogu głównym zawiera wymagane zmienne srodowiskowe. Przykład:
+   ```
+   VITE_API_URL=https://example.com/api
+   ```
+
+4. **Uruchomienie aplikacji**:
+   ```bash
+   npm run dev
+   ```
+   > 💡 Aplikacja będzie dostępna pod adresem `http://localhost:5173/`.
+
+5. Uruchomienie aplikacji w trybie produkcyjnym:
+   ```bash
+   npm run build && npm run preview
+   ```
+    > 💡 Aplikacja będzie dostępna pod adresem `http://localhost:4173/`.
+
+6. **Uruchomienie testów**:
+   ```bash
+   npm run test
+   ```
+
+---
+
+## 🗂️ Struktura projektu
+
+```
+src/
+├── api/                # Definicje zapytań do API
+├── components/         # Komponenty React
+│   ├── common/         # Komponenty wspólne (np. nagłówki tabel)
+│   ├── DebtTable/      # Tabela długów
+│   ├── ErrorView/      # Komponent obsługi błędów
+│   └── NoResult/       # Komponent "Brak wyników"
+├── hooks/              # Custom hooki (np. `useSorting`)
+├── utils/              # Funkcje pomocnicze (formatowanie dat, walut)
+├── App.tsx             # Główny komponent aplikacji
+└── index.tsx           # Punkt wejściowy aplikacji
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ✅ Przykładowe dane
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+Przykład obiektu `Debt` używanego w aplikacji:
+
+```json
+{
+  "Id": 1,
+  "Name": "ABC Company",
+  "NIP": "1234567890",
+  "Value": 1500.50,
+  "Date": "2025-01-01"
+}
 ```
+
+---
+
+## 👤 Autor
+
+Projekt stworzony przez [Radomir Skrzepij](https://github.com/skrzepij). Masz pytania? Skontaktuj się za pośrednictwem
+GitHuba!
