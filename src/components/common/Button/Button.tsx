@@ -1,4 +1,5 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react';
+
 import './Button.less';
 
 type ButtonVariant = 'primary';
@@ -15,15 +16,8 @@ export function Button({
   children,
   ...props
 }: ButtonProps) {
-  // const [count, setCount] = useState(0);
-
   return (
-    <button
-      className={`button button--${variant} ${className ?? ''}`}
-      type={type}
-      // onClick={() => setCount(count => count + 1)}
-      {...props}
-    >
+    <button className={`button button--${variant} ${className ?? ''}`} type={type} {...props}>
       {children}
     </button>
   );

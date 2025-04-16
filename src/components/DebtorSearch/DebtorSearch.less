@@ -3,8 +3,8 @@
 
 .debtor-search {
   background-color: @blue-dark;
-  color: @white;
-  padding: 35px 0 55px 0;
+  color: @gray;
+  padding: 33px 0 55px 0;
 
   &__content {
     &:extend(.container);
@@ -13,13 +13,19 @@
   &__heading {
     font-size: 1rem;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 
   &__form {
     display: flex;
-    align-items: flex-end;
-    width: 575px;
-    max-width: 100%;
+    flex-direction: column;
+  }
+  @media screen and (min-width: 480px) {
+    &__form {
+      flex-direction: row;
+      align-items: flex-end;
+      width: 575px;
+      max-width: 100%;
+    }
   }
 }
